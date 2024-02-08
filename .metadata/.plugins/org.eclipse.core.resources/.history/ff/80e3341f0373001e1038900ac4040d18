@@ -1,0 +1,32 @@
+package SeleniumPractice.EcommersProject;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class StandaloneTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		WebDriver driver;
+
+		WebDriverManager.chromedriver().setup();
+		
+		driver=new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		driver.get("https://rahulshettyacademy.com/client/auth/login");
+		
+		driver.findElement(By.id("userEmail")).sendKeys("dapurkar.aniket@gmail.com");
+		
+		driver.findElement(By.id("userPassword")).sendKeys("Aniket*123");
+		
+		driver.findElement(By.id("login")).click();
+	}
+
+}

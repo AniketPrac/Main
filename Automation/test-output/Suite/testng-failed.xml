@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="infoTest(failed)">
+    <classes>
+      <class name="AutomationRegisterTest.EnterInfoTest">
+        <methods>
+          <include name="CheckMark"/>
+          <include name="AddressInformation"/>
+          <include name="DateOfBirth"/>
+          <include name="EnterCreateAccount"/>
+          <include name="GenderInfo"/>
+        </methods>
+      </class> <!-- AutomationRegisterTest.EnterInfoTest -->
+    </classes>
+  </test> <!-- infoTest(failed) -->
+  <test thread-count="5" name="UserTest(failed)">
+    <classes>
+      <class name="AutomationRegisterTest.LogOutUsetTest">
+        <methods>
+          <include name="LogOutUser"/>
+          <include name="TearDown"/>
+          <include name="LaunchApp"/>
+        </methods>
+      </class> <!-- AutomationRegisterTest.LogOutUsetTest -->
+    </classes>
+  </test> <!-- UserTest(failed) -->
+  <test thread-count="5" name="SignUpTest(failed)">
+    <classes>
+      <class name="AutomationRegisterTest.SignUpTest">
+        <methods>
+          <include name="TearDown"/>
+          <include name="LaunchApp"/>
+          <include name="NavigateHomePage"/>
+        </methods>
+      </class> <!-- AutomationRegisterTest.SignUpTest -->
+    </classes>
+  </test> <!-- SignUpTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

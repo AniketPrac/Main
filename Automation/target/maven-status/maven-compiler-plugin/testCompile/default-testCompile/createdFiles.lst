@@ -1,0 +1,10 @@
+AutomationRegisterTest\RegisterUserExistingTest.class
+AutomationRegisterTest\ContactUsTest.class
+AutomationRegisterTest\TestCaseTest3.class
+Component\BaseClass.class
+Component\Listener.class
+AutomationRegisterTest\EnterInfoTest.class
+Component\Extentreporterng.class
+AutomationRegisterTest\LogOutUsetTest.class
+AutomationRegisterTest\TestCaseTest2.class
+AutomationRegisterTest\SignUpTest.class

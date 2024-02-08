@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="3" total="6" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-10-22T09:12:26 IST" name="Loan" finished-at="2023-10-22T09:12:26 IST" duration-ms="121">
+    <groups>
+      <group name="Smoke">
+        <method signature="Day1.SecondDemo()[pri:0, instance:TestNG.Day1@460d0a57]" name="SecondDemo" class="TestNG.Day1"/>
+        <method signature="Day2.Demo2()[pri:0, instance:TestNG.Day2@659a969b]" name="Demo2" class="TestNG.Day2"/>
+        <method signature="Day3.MobilecarLoan()[pri:0, instance:TestNG.Day3@76908cc0]" name="MobilecarLoan" class="TestNG.Day3"/>
+      </group> <!-- Smoke -->
+    </groups>
+    <test started-at="2023-10-22T09:12:26 IST" name="PersonalLoan" finished-at="2023-10-22T09:12:26 IST" duration-ms="121">
+      <class name="TestNG.Day2">
+        <test-method signature="Demo2()[pri:0, instance:TestNG.Day2@659a969b]" started-at="2023-10-22T09:12:26 IST" name="Demo2" finished-at="2023-10-22T09:12:26 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Demo2 -->
+      </class> <!-- TestNG.Day2 -->
+      <class name="TestNG.Day1">
+        <test-method signature="SecondDemo()[pri:0, instance:TestNG.Day1@460d0a57]" started-at="2023-10-22T09:12:26 IST" name="SecondDemo" finished-at="2023-10-22T09:12:26 IST" duration-ms="15" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SecondDemo -->
+      </class> <!-- TestNG.Day1 -->
+      <class name="TestNG.Day3">
+        <test-method signature="MobilecarLoan()[pri:0, instance:TestNG.Day3@76908cc0]" started-at="2023-10-22T09:12:26 IST" name="MobilecarLoan" finished-at="2023-10-22T09:12:26 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- MobilecarLoan -->
+      </class> <!-- TestNG.Day3 -->
+    </test> <!-- PersonalLoan -->
+  </suite> <!-- Loan -->
+</testng-results>

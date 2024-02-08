@@ -1,0 +1,59 @@
+package StepDefination;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+import PageObjects.LandingPage;
+import PageObjects.PageObjectManager;
+import Utils.TextContextSetUp;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class GreenkartStepDefination {
+
+	public WebDriver driver;
+	public String HomepageText;
+	public String ChildWindowText;
+	TextContextSetUp textcontextsetup;
+	PageObjectManager pageObjectManager;
+	
+	public GreenkartStepDefination(TextContextSetUp textcontextsetup) {
+		
+		this.textcontextsetup=textcontextsetup;
+	}
+	@Given("User is on greencart landing page")
+	public void user_is_on_greencart_landing_page() {
+		
+		System.setProperty("Webdriver.chrome.driver","C:\\Drivers\\Chrome1\\chromedriver\\chromedriver.exe");
+		textcontextsetup.driver=new ChromeDriver();
+		textcontextsetup. driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+		textcontextsetup.driver.manage().window().maximize();
+	}
+	@When("User is search with shortname {string} and extract actual name of product")
+	public void user_is_search_with_shortname_and_extract_actual_name_of_product(String Sname) throws InterruptedException {
+		
+		
+		//pageObjectManager=new PageObjectManager(textcontextsetup.driver);
+		
+		LandingPage landingPage=textcontextsetup.pageObjectManager.getlandingPage();
+		
+		//LandingPage LandingPage=new LandingPage(textcontextsetup.driver);
+		
+		landingPage.searchText(Sname);
+		
+		//textcontextsetup.driver.findElement(By.xpath("//input[@type=\"search\"]")).sendKeys(name);
+		
+		Thread.sleep(2000);
+		
+		HomepageText=landingPage.SearchProductName().split("-")[0].trim();
+	   
+		System.out.println(HomepageText);
+	}
+	
+}

@@ -1,0 +1,29 @@
+package StepDefination;
+
+import org.openqa.selenium.WebDriver;
+
+import Utils.TextContextSetUp;
+import io.cucumber.java.en.Then;
+
+public class CheckOutStepDefination {
+
+	public WebDriver driver;
+	public String HomepageText;
+	public String ChildWindowText;
+	TextContextSetUp textcontextsetup;
+
+	public CheckOutStepDefination(TextContextSetUp textcontextsetup) {
+
+		this.textcontextsetup = textcontextsetup;
+	}
+
+	@Then("User proceed to checkout and validate the <String> items in checkout page")
+	public void User_proceed_to_checkout_and_validate() {
+
+	}
+
+	@Then("Verify user has ability to enter promo code and place the order. ")
+	public void Verify_user_has_ability_to_enter_promo_code_and_place_the_order() {
+
+	}
+}

@@ -1,0 +1,64 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 933.513 s <<< FAILURE! - in TestSuite
+GenderInfo(AutomationRegisterTest.EnterInfoTest)  Time elapsed: 0.148 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
+	at AutomationRegisterTest.EnterInfoTest.GenderInfo(EnterInfoTest.java:17)
+
+DateOfBirth(AutomationRegisterTest.EnterInfoTest)  Time elapsed: 0.009 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
+	at AutomationRegisterTest.EnterInfoTest.DateOfBirth(EnterInfoTest.java:25)
+
+CheckMark(AutomationRegisterTest.EnterInfoTest)  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
+	at AutomationRegisterTest.EnterInfoTest.CheckMark(EnterInfoTest.java:35)
+
+AddressInformation(AutomationRegisterTest.EnterInfoTest)  Time elapsed: 0.006 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
+	at AutomationRegisterTest.EnterInfoTest.AddressInformation(EnterInfoTest.java:44)
+
+EnterCreateAccount(AutomationRegisterTest.EnterInfoTest)  Time elapsed: 1.022 s  <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
+	at AutomationRegisterTest.EnterInfoTest.EnterCreateAccount(EnterInfoTest.java:61)
+
+LogOutUser(AutomationRegisterTest.LogOutUsetTest)  Time elapsed: 42.587 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//h2[normalize-space()='Login to your account']"}
+  (Session info: chrome=119.0.6045.200)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.0', revision: 'e5a96349ce'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5360c3b94b3de79dedfe1ec5524de74f, findElement {using=xpath, value=//h2[normalize-space()='Login to your account']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.200, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\Aniket\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59228}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59228/devtoo..., se:cdpVersion: 119.0.6045.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5360c3b94b3de79dedfe1ec5524de74f
+	at AutomationRegisterTest.LogOutUsetTest.LogOutUser(LogOutUsetTest.java:22)
+
+RegistExistingUser(AutomationRegisterTest.RegisterUserExistingTest)  Time elapsed: 180.525 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: 
+java.util.concurrent.TimeoutException
+Build info: version: '4.14.0', revision: 'e5a96349ce'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f797dcf0a5ee7050703ef6c997e9351e, clickElement {id=7DFF243AC2B5711CCBF8FDF0692FC3EE_element_18}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.200, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\Aniket\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59286}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59286/devtoo..., se:cdpVersion: 119.0.6045.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f797dcf0a5ee7050703ef6c997e9351e)] -> xpath: //a[normalize-space()='Signup / Login']]
+Session ID: f797dcf0a5ee7050703ef6c997e9351e
+	at AutomationRegisterTest.RegisterUserExistingTest.RegistExistingUser(RegisterUserExistingTest.java:15)
+Caused by: java.util.concurrent.TimeoutException
+	at AutomationRegisterTest.RegisterUserExistingTest.RegistExistingUser(RegisterUserExistingTest.java:15)
+
+NavigateHomePage(AutomationRegisterTest.SignUpTest)  Time elapsed: 42.622 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//b[normalize-space()='Enter Account Information']"}
+  (Session info: chrome=119.0.6045.200)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.14.0', revision: 'e5a96349ce'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [92014b8c3f6a0216558bdd0752130aed, findElement {using=xpath, value=//b[normalize-space()='Enter Account Information']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.200, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\Aniket\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59485}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59485/devtoo..., se:cdpVersion: 119.0.6045.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 92014b8c3f6a0216558bdd0752130aed
+	at AutomationRegisterTest.SignUpTest.NavigateHomePage(SignUpTest.java:32)
+

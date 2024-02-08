@@ -1,0 +1,31 @@
+package Automation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
+public class RelativeLocators {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver;
+		System.setProperty("Webdriver.chrome.driver", "C:\\Users\\Aniket\\Desktop\\chrome driver\\new\\chromedriver_win32 (7)//chromedriver.exe");
+
+		 driver=new ChromeDriver();
+		 
+		 driver.get("https://rahulshettyacademy.com/angularpractice/");
+		 
+		 //Relative locators are
+		 // Above()
+		 //Blow();
+		 //torightof();
+		 //toleftof();
+		 
+		 WebElement nameEditbox=driver.findElement(By.cssSelector("[minlength=\"2\"]"));
+		 
+	     System.out.println(driver.findElement(with(By.tagName("label")).above(nameEditbox)).getText());
+	    )
+	}
+
+}

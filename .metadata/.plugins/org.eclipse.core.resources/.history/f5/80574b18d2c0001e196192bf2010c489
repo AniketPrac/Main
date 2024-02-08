@@ -1,0 +1,72 @@
+package StepDefination;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+import Utils.TextContextSetUp;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class GreenkartStepDefination {
+
+	public WebDriver driver;
+	public String HomepageText;
+	public String ChildWindowText;
+	TextContextSetUp textcontextsetup;
+	public GreenkartStepDefination(TextContextSetUp textcontextsetup) {
+		
+		this.textcontextsetup=textcontextsetup;
+	}
+	@Given("User is on greencart landing page")
+	public void user_is_on_greencart_landing_page() {
+		
+		System.setProperty("Webdriver.chrome.driver","C:\\Drivers\\Chrome1\\chromedriver\\chromedriver.exe");
+	     driver=new ChromeDriver();
+	     driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+	     driver.manage().window().maximize();
+	}
+	@When("User is search with shortname {string} and extract actual name of product")
+	public void user_is_search_with_shortname_and_extract_actual_name_of_product(String name) throws InterruptedException {
+		
+		driver.findElement(By.xpath("//input[@type=\"search\"]")).sendKeys(name);
+		
+		Thread.sleep(2000);
+		
+		String HomepageText=driver.findElement(By.cssSelector("h4[class='product-name']")).getText().split("-")[0].trim();
+	    
+		System.out.println(HomepageText);
+	}
+	@Then("User is search for same name {string} in offers page to check if product exist")
+	public void user_is_search_for_same_name_in_offers_page_to_check_if_product_exist(String name) throws InterruptedException {
+ 
+		
+    driver.findElement(By.xpath("//a[normalize-space()='Top Deals']")).click();    
+    Set<String> windows=driver.getWindowHandles();
+    
+     Iterator<String> it=windows.iterator();
+     String ParentWindow=it.next();
+     String ChileWindow=it.next();   
+     driver.switchTo().window(ChileWindow);
+     
+    driver.findElement(By.xpath("//input[@id=\"search-field\"]")).sendKeys(name);
+    
+    Thread.sleep(2000);
+     
+     String ChildWindowText=driver.findElement(By.xpath("//td[normalize-space()='Tomato']")).getText();
+	    
+     	}
+	
+	@Then("Validate the both the products")
+	public void Validate_the_both_the_products() {
+		
+		Assert.assertEquals(HomepageText, ChildWindowText);
+     
+	    
+	}
+}

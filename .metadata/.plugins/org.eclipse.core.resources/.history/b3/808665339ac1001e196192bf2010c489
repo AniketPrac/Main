@@ -1,0 +1,29 @@
+package PageObjects;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class OffersPage {
+
+	
+	public WebDriver driver;
+	
+	public OffersPage(WebDriver driver2) {
+		// TODO Auto-generated constructor stub
+		
+		this.driver=driver;
+	}
+
+	By ClickOnTopDeals=By.xpath("//a[normalize-space()='Top Deals']");
+	By SearchFields=By.xpath("//input[@id=\"search-field\"]");
+	
+	public void TopDeals() {
+		
+		driver.findElement(ClickOnTopDeals).click();
+	}
+	
+	public void SearchField(String Name) {
+		
+		driver.findElement(SearchFields).sendKeys(Name);
+	}
+}

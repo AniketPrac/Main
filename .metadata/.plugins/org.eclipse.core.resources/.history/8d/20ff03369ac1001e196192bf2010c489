@@ -1,0 +1,52 @@
+package StepDefination;
+
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
+
+import PageObjects.OffersPage;
+import Utils.TextContextSetUp;
+import io.cucumber.java.en.Then;
+
+public class OfferPage {
+
+	public String ChildWindowText;
+	TextContextSetUp textcontextsetup;
+
+	public OfferPage(TextContextSetUp textcontextsetup) {
+
+		this.textcontextsetup = textcontextsetup;
+	}
+
+	@Then("User is search for same name {string} in offers page to check if product exist")
+	public void user_is_search_for_same_name_in_offers_page_to_check_if_product_exist(String name)
+			throws InterruptedException {
+		OffersPage OffersPage = new OffersPage(textcontextsetup.driver);
+		OffersPage.TopDeals();
+		//textcontextsetup.driver.findElement(By.xpath("//a[normalize-space()='Top Deals']")).click();
+		Set<String> windows = textcontextsetup.driver.getWindowHandles();
+
+		Iterator<String> it = windows.iterator();
+		String ParentWindow = it.next();
+		String ChileWindow = it.next();
+		textcontextsetup.driver.switchTo().window(ChileWindow);
+		
+		OffersPage.SearchField(name);
+
+		//textcontextsetup.driver.findElement(By.xpath("//input[@id=\"search-field\"]")).sendKeys(name);
+
+		Thread.sleep(2000);
+
+		String ChildWindowText =textcontextsetup. driver.findElement(By.xpath("//td[normalize-space()='Tomato']")).getText();
+
+	}
+
+	@Then("Validate the both the products")
+	public void Validate_the_both_the_products() {
+
+		Assert.assertEquals(textcontextsetup.HomepageText, ChildWindowText);
+
+	}
+}

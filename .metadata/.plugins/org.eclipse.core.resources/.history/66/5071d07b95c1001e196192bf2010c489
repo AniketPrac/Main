@@ -1,0 +1,27 @@
+package PageObjects;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class LandingPage {
+
+	public WebDriver driver;
+	public LandingPage(WebDriver driver) {
+		
+		this.driver=driver;
+	}
+	
+	By Serach=By.xpath("//input[@type=\"search\"]");
+	By ProductName=By.cssSelector("h4[class='product-name']");
+
+	
+	public void searchText(String name) {
+		
+		driver.findElement(Serach).sendKeys(name);
+	}
+	
+	public void SearchProductName() {
+		
+		driver.findElement(ProductName).getText();
+	}
+}

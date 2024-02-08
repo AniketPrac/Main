@@ -1,0 +1,16 @@
+package Utils;
+
+import org.openqa.selenium.WebDriver;
+
+import PageObjects.PageObjectManager;
+
+public class TextContextSetUp {
+	
+	public WebDriver driver;
+	public String HomepageText;
+	public String ChildWindowText;
+	public PageObjectManager pageObjectManager;
+	
+	
+
+}
